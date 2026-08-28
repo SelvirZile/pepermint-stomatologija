@@ -1,4 +1,4 @@
-name: Deploy site (docs)
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -15,28 +15,42 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instaliraj
+        run: npm install
+
+      - name: Build (SSG)
+        env:
+          BASE: /pepermint-stomatologija/
+        run: |
+          npm run build
+          npm run generate
+          touch dist/client/.nojekyll
+          cp dist/client/index.html dist/client/404.html
+
+      - name: Proveri rezultat
+        run: |
+          ls -la dist/client
+          test -f dist/client/index.html || { echo "GRESKA: build nije napravio index.html"; exit 1; }
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Proveri sadržaj
-        run: |
-          echo "--- docs ---"
-          ls -la docs
-          test -f docs/index.html || { echo "GRESKA: docs/index.html ne postoji"; exit 1; }
-
-      - name: Pripremi
-        run: |
-          touch docs/.nojekyll
-          cp docs/index.html docs/404.html
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-
       - id: deployment
         uses: actions/deploy-pages@v4
