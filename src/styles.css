@@ -106,14 +106,14 @@ a:hover { color: var(--green); }
   .nav-bar-static { max-width: 100% !important; margin: 0 auto !important; padding: 14px 20px !important; }
   .menu-wrap { padding: 0 16px !important; }
 
-  .hero-section { align-items: flex-end !important; }
+  .hero-section { align-items: flex-end !important; min-height: 100svh !important; }
   .hero-img { object-position: 55% center !important; }
   .hero-scrim {
     background: linear-gradient(to top, rgba(16,26,28,0.86) 0%, rgba(16,26,28,0.62) 45%, rgba(16,26,28,0.3) 100%) !important;
   }
-  .hero-inner { padding: 0 24px 30px !important; text-align: center !important; }
+  .hero-inner { padding: 0 24px 74px !important; text-align: center !important; }
   .hero-inner > div { max-width: 100% !important; }
-  .hero-inner .eyebrow { font-size: 12px !important; }
+  .hero-inner .eyebrow { font-size: 10.5px !important; letter-spacing: 0.13em !important; }
   .hero-inner h1 { font-size: 44px !important; margin-bottom: 14px !important; }
   .hero-inner p { font-size: 16.8px !important; margin: 0 auto 20px !important; max-width: 34ch !important; }
   .hero-inner .hero-btns { justify-content: center !important; }
