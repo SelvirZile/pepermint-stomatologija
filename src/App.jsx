@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SERVICES } from './data/site.js';
-import { useScrollSpy, useScrollReveal, useHashSync } from './hooks.js';
+import { useScrollSpy, useScrollReveal, useHashSync, useTopOnLoad } from './hooks.js';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Services from './components/Services.jsx';
@@ -14,6 +14,7 @@ import { ContactModal, ServiceModal } from './components/Modals.jsx';
 const SECTION_IDS = ['usluge', 'cenovnik', 'tim', 'iskustva', 'kako'];
 
 export default function App() {
+  useTopOnLoad();
   const { scrolled, active } = useScrollSpy(SECTION_IDS);
   useScrollReveal();
   useHashSync(active);

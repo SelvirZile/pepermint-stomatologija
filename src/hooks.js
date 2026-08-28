@@ -93,3 +93,16 @@ export function useHashSync(active) {
     window.history.replaceState(null, '', url);
   }, [active]);
 }
+
+/** Reload uvek počinje od hero sekcije, ne od zapamćene pozicije. */
+export function useTopOnLoad() {
+  useEffect(() => {
+    try {
+      if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+      requestAnimationFrame(() => window.scrollTo(0, 0));
+    } catch (e) { /* noop */ }
+  }, []);
+}
