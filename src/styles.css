@@ -154,14 +154,15 @@ a:hover { color: var(--green); }
   .tim-card:hover img { transform: none !important; }
 
   #kako iframe { min-height: 300px; }
-  #cenovnik > svg g, #iskustva > svg g { stroke-opacity: 0.42 !important; stroke-width: 2.4 !important; }
-  #cenovnik > svg circle, #iskustva > svg circle { cx: 430px; cy: 500px; }
+  /* isti diskretan stil kao na desktopu; centri izvan vidljivog pojasa pa se vidi ~trecina prstena */
+  #cenovnik > svg g, #iskustva > svg g { stroke-opacity: 0.18 !important; stroke-width: 1.4 !important; }
+  #cenovnik > svg circle, #iskustva > svg circle { cx: 330px; cy: 540px; }
   #cenovnik > svg circle:nth-child(1), #iskustva > svg circle:nth-child(1) { r: 250px; }
   #cenovnik > svg circle:nth-child(2), #iskustva > svg circle:nth-child(2) { r: 175px; }
   #cenovnik > svg circle:nth-child(3), #iskustva > svg circle:nth-child(3) { r: 100px; }
-  #cenovnik > svg circle:nth-child(4), #iskustva > svg circle:nth-child(4) { cx: 780px; cy: 110px; r: 235px; }
-  #cenovnik > svg circle:nth-child(5), #iskustva > svg circle:nth-child(5) { cx: 780px; cy: 110px; r: 160px; }
-  #cenovnik > svg circle:nth-child(6), #iskustva > svg circle:nth-child(6) { cx: 780px; cy: 110px; r: 88px; }
+  #cenovnik > svg circle:nth-child(4), #iskustva > svg circle:nth-child(4) { cx: 880px; cy: 60px; r: 235px; }
+  #cenovnik > svg circle:nth-child(5), #iskustva > svg circle:nth-child(5) { cx: 880px; cy: 60px; r: 160px; }
+  #cenovnik > svg circle:nth-child(6), #iskustva > svg circle:nth-child(6) { cx: 880px; cy: 60px; r: 88px; }
 
   .footer-contact { display: none !important; }
   footer > div { justify-content: center !important; flex-direction: column !important; text-align: center !important; padding: 8px 24px 12px !important; gap: 6px !important; }
