@@ -52,12 +52,6 @@ export default function Contact() {
             </a>
           </div>
         </div>
-
-        <p style={{ marginTop: 20, fontFamily: "'Manrope',sans-serif", fontSize: 15 }}>
-          <a href={CONTACT.mapsUrl} target="_blank" rel="noopener" style={{ color: '#1f5a50', fontWeight: 600 }}>
-            Otvori ordinaciju Pepermint u Google mapama
-          </a>
-        </p>
       </div>
     </section>
   );
