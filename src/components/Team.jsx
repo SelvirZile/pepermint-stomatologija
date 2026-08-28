@@ -1,7 +1,7 @@
 import { TEAM } from '../data/site.js';
 import { asset } from '../asset.js';
 
-const GOLD_DARK = '#8a6524';
+const GOLD_DARK = '#c9a25e';
 
 export default function Team() {
   return (

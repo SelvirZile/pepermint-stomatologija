@@ -1,7 +1,7 @@
 import { PRICES, FEATURES } from '../data/site.js';
 import Icon from './Icon.jsx';
 
-const GOLD = '#e8cf9a';
+const GOLD = '#c9a25e';
 
 export default function Pricing() {
   return (

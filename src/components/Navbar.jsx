@@ -2,7 +2,7 @@ import { NAV, CONTACT } from '../data/site.js';
 import { asset } from '../asset.js';
 import Icon from './Icon.jsx';
 
-const GOLD = '#e8cf9a';
+const GOLD = '#c9a25e';
 
 const goTop = (e) => {
   e.preventDefault();

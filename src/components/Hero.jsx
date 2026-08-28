@@ -1,6 +1,6 @@
 import { asset } from '../asset.js';
 
-const GOLD = '#e8cf9a';
+const GOLD = '#c9a25e';
 
 export default function Hero() {
   return (

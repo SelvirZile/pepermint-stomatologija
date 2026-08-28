@@ -1,7 +1,7 @@
 import reviews from '../data/reviews.json';
 import Icon from './Icon.jsx';
 
-const GOLD = '#e8cf9a';
+const GOLD = '#c9a25e';
 const QUOTE = '<path d="M9 6c-3 1.4-4.5 4-4.5 7.2C4.5 16.3 6.2 18 8.4 18c1.9 0 3.3-1.3 3.3-3.1 0-1.8-1.3-3-3-3-.3 0-.6 0-.8.1.3-1.7 1.4-3.1 3.1-4L9 6zM19 6c-3 1.4-4.5 4-4.5 7.2 0 3.1 1.7 4.8 3.9 4.8 1.9 0 3.3-1.3 3.3-3.1 0-1.8-1.3-3-3-3-.3 0-.6 0-.8.1.3-1.7 1.4-3.1 3.1-4L19 6z"></path>';
 
 export default function Reviews() {

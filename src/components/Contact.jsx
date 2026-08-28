@@ -1,7 +1,7 @@
 import { CONTACT } from '../data/site.js';
 import Icon from './Icon.jsx';
 
-const GOLD_DARK = '#8a6524';
+const GOLD_DARK = '#c9a25e';
 const PIN = '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle>';
 
 export default function Contact() {

@@ -4,7 +4,7 @@ import { SERVICES } from '../data/site.js';
 import { useSwipe } from '../hooks.js';
 import Icon from './Icon.jsx';
 
-const GOLD_DARK = '#8a6524';
+const GOLD_DARK = '#c9a25e';
 const EASE = 'cubic-bezier(.33,.7,.3,1)';
 const RADIUS = 400;
 const CARD_BG = 'radial-gradient(120% 70% at 30% 0%, #17756a, #0f5e54 45%, #0a4139)';
@@ -117,11 +117,11 @@ export default function Services({ onOpenService }) {
                       {s.desc}
                     </p>
 
-                    <span style={{
+                    <span className={center ? 'svc-pill' : undefined} style={{
                       position: 'absolute', bottom: center ? 32 : 24, left: '50%', transform: 'translateX(-50%)',
                       display: 'inline-flex', alignItems: 'center', gap: 8, whiteSpace: 'nowrap',
                       fontFamily: "'Manrope',sans-serif", fontWeight: 600, fontSize: center ? 15 : 13,
-                      color: '#e8cf9a', background: 'rgba(10,65,57,0.55)', border: '1px solid rgba(232,207,154,0.6)',
+                      color: '#c9a25e', background: 'rgba(10,65,57,0.55)', border: '1px solid rgba(201,162,94,0.55)',
                       borderRadius: 999, padding: center ? '9px 18px' : '7px 14px'
                     }}>
                       <span style={{ lineHeight: 1 }}>Saznaj više</span>
@@ -136,6 +136,14 @@ export default function Services({ onOpenService }) {
             <button
               type="button"
               onClick={() => onOpenService(i)}
+              onMouseEnter={() => {
+                const p = document.querySelector('#usluge .svc-pill');
+                if (p) { p.style.color = '#f0dcb2'; p.style.borderColor = '#f0dcb2'; }
+              }}
+              onMouseLeave={() => {
+                const p = document.querySelector('#usluge .svc-pill');
+                if (p) { p.style.color = '#c9a25e'; p.style.borderColor = 'rgba(201,162,94,0.55)'; }
+              }}
               style={{ position: 'absolute', bottom: 22, left: '50%', transform: 'translateX(-50%)', width: 'clamp(200px,26vw,300px)', height: 58, zIndex: 30, background: 'transparent', border: 'none', cursor: 'pointer', padding: 0, color: 'transparent' }}
             >
               <span className="visually-hidden">Saznaj više: {SERVICES[i].title}</span>

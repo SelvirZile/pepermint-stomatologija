@@ -3,7 +3,7 @@ import { CONTACT } from '../data/site.js';
 import { useBodyLock } from '../hooks.js';
 import Icon from './Icon.jsx';
 
-const GOLD_DARK = '#8a6524';
+const GOLD_DARK = '#c9a25e';
 const PHONE = '<path d="M6.5 3.5h3l1.2 4-2 1.4a11 11 0 0 0 4.9 4.9l1.4-2 4 1.2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"></path>';
 
 export function Modal({ onClose, children, titleId, maxWidth = 420 }) {
