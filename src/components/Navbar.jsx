@@ -35,7 +35,7 @@ export default function Navbar({ scrolled, active, menuOpen, onToggleMenu, onClo
 
   return (
     <header style={headerStyle}>
-      <div className="nav-bar" style={barStyle}>
+      <div className={`nav-bar ${scrolled ? 'nav-bar-scrolled' : 'nav-bar-static'}`} style={barStyle}>
         <a href="#top" aria-label="Pepermint, početak stranice" style={{ display: 'flex', alignItems: 'center' }}>
           {logo(54)}
         </a>
