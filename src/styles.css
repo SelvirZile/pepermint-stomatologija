@@ -144,18 +144,8 @@ a:hover { color: var(--green); }
   .hero-inner .hero-btns { justify-content: center !important; }
   .hero-inner .hero-btns a { padding: 13px 22px !important; font-size: 15px !important; border-radius: 999px !important; }
 
-  .svc-3d-wrap { display: none !important; }
-  .svc-dots { display: none !important; }
-  .svc-strip {
-    display: flex !important; list-style: none; margin: 0 -24px; padding: 4px 24px 8px; gap: 16px;
-    overflow-x: auto; overflow-y: hidden;
-    scroll-snap-type: x mandatory; scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
-    scrollbar-width: none;
-  }
-  .svc-strip::-webkit-scrollbar { display: none; }
+  .svc-strip { display: none !important; }
   .carousel-arrow { display: none !important; }
-  .carousel-side { display: none !important; }
   .rev-track > figure { flex: 0 0 280px !important; }
 
   #tim > img { top: -19px !important; }
