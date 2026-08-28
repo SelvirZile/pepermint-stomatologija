@@ -127,6 +127,7 @@ a:hover { color: var(--green); }
   .tim-reveal { display: none !important; }
   .tim-card:hover img { transform: none !important; }
 
+  #kako iframe { min-height: 300px; }
   .footer-contact { display: none !important; }
   footer > div { justify-content: center !important; flex-direction: column !important; text-align: center !important; padding: 8px 24px 12px !important; gap: 6px !important; }
   footer img { height: 56px !important; }

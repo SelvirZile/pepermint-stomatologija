@@ -6,7 +6,7 @@ export const CONTACT = {
   mapsUrl:
     'https://www.google.com/maps/place/Pepermint/@44.8783449,20.4592353,17z/data=!3m1!4b1!4m6!3m5!1s0x475a65346c6e545b:0xda8cb7a54ec17c17!8m2!3d44.8783449!4d20.4592353!16s%2Fg%2F11hhz6qyz6',
   mapsEmbed:
-    'https://www.google.com/maps?q=Pepermint,+Kosovopoljska+4,+Beograd&ll=44.8783449,20.4592353&z=17&output=embed'
+    'https://maps.google.com/maps?q=Pepermint,+Kosovopoljska+4,+Beograd&ll=44.8783449,20.4592353&z=17&hl=sr&output=embed'
 };
 
 export const SERVICES = [
