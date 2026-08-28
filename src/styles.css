@@ -154,6 +154,8 @@ a:hover { color: var(--green); }
   .tim-card:hover img { transform: none !important; }
 
   #kako iframe { min-height: 300px; }
+  #cenovnik > svg g, #iskustva > svg g { stroke-opacity: 0.4 !important; stroke-width: 1.8 !important; }
+
   .footer-contact { display: none !important; }
   footer > div { justify-content: center !important; flex-direction: column !important; text-align: center !important; padding: 8px 24px 12px !important; gap: 6px !important; }
   footer img { height: 56px !important; }

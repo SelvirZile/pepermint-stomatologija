@@ -1,6 +1,6 @@
 export const CONTACT = {
   phone: '063 649087',
-  tel: '+381649087',
+  tel: '+38163649087',
   address: 'Kosovopoljska 4, Beograd',
   hours: 'Svaki dan od 11 do 19h',
   mapsUrl:
