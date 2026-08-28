@@ -11,7 +11,7 @@ import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import { ContactModal, ServiceModal } from './components/Modals.jsx';
 
-const SECTION_IDS = ['usluge', 'cenovnik', 'tim', 'kako'];
+const SECTION_IDS = ['usluge', 'cenovnik', 'tim', 'iskustva', 'kako'];
 
 export default function App() {
   const { scrolled, active } = useScrollSpy(SECTION_IDS);
