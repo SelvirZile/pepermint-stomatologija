@@ -19,7 +19,7 @@ export default function Navbar({ scrolled, active, menuOpen, onToggleMenu, onClo
 
   const barStyle = scrolled
     ? {
-        ...barBase, gap: 14, maxWidth: 'min(847px, calc(100% - 48px))', margin: '12px auto', padding: '10px 18px',
+        ...barBase, gap: 14, maxWidth: 'min(1040px, calc(100% - 48px))', margin: '12px auto', padding: '10px 18px',
         background: 'linear-gradient(90deg, rgba(15,94,84,0.97), rgba(11,66,58,0.97), rgba(15,94,84,0.97))',
         borderRadius: 30, border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 6px 22px rgba(12,60,52,0.28)'
       }
