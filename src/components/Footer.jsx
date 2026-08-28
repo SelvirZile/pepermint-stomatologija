@@ -12,7 +12,7 @@ export default function Footer() {
         </g>
       </svg>
 
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: '22px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: '100%', margin: '0 auto', padding: '22px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
         <a href="#top" aria-label="Pepermint, natrag na početak" style={{ display: 'block' }}>
           <picture>
             <source srcSet={asset('/assets/logo-light.webp')} type="image/webp" />

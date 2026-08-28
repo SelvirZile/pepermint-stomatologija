@@ -23,7 +23,7 @@ export default function Navbar({ scrolled, active, menuOpen, onToggleMenu, onClo
         background: 'linear-gradient(90deg, rgba(15,94,84,0.97), rgba(11,66,58,0.97), rgba(15,94,84,0.97))',
         borderRadius: 30, border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 6px 22px rgba(12,60,52,0.28)'
       }
-    : { ...barBase, gap: 20, maxWidth: 1100, padding: '16px 24px', background: 'transparent', borderRadius: 0, border: '1px solid transparent', boxShadow: 'none' };
+    : { ...barBase, gap: 20, maxWidth: '100%', padding: '16px 40px', background: 'transparent', borderRadius: 0, border: '1px solid transparent', boxShadow: 'none' };
 
   const linkColor = (id) => (active === id ? GOLD : '#FAF9F5');
   const logo = (h) => (
