@@ -79,3 +79,16 @@ export function useScrollReveal() {
     return () => io.disconnect();
   }, []);
 }
+
+/** Keeps the URL hash in step with the section on screen; hero shows the clean URL. */
+export function useHashSync(active) {
+  useEffect(() => {
+    const want = active ? '#' + active : '';
+    const have = window.location.hash;
+    if (have === want) return;
+
+    const url = window.location.pathname + window.location.search + want;
+    // replaceState: no history entries, no jump, back button still works normally
+    window.history.replaceState(null, '', url);
+  }, [active]);
+}

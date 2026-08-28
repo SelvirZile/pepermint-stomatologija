@@ -5,17 +5,27 @@ const GOLD = '#e8cf9a';
 export default function Hero() {
   return (
     <section className="hero-section" aria-labelledby="hero-title" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: '#0a4139', overflow: 'hidden' }}>
-      <img
-        className="hero-img"
-        src={asset('/assets/hero-1280.webp')}
-        srcSet={`${asset('/assets/hero-800.webp')} 800w, ${asset('/assets/hero-1280.webp')} 1280w, ${asset('/assets/hero-1920.webp')} 1920w`}
-        sizes="100vw"
-        width="1280"
-        height="853"
-        fetchpriority="high"
-        decoding="async"
-        alt="Nasmejana devojčica u stolici stomatološke ordinacije Pepermint, stomatolog u pozadini"
-      />
+      <picture>
+        {/* Telefon kropuje uski isečak, pa landscape fajl mora da se uveća ~3x.
+            Portret varijanta koristi punu visinu originala i ostaje ostra. */}
+        <source
+          media="(max-width: 768px)"
+          type="image/webp"
+          srcSet={`${asset('/assets/hero-portrait-620.webp')} 620w, ${asset('/assets/hero-portrait-900.webp')} 900w`}
+          sizes="100vw"
+        />
+        <img
+          className="hero-img"
+          src={asset('/assets/hero-1280.webp')}
+          srcSet={`${asset('/assets/hero-800.webp')} 800w, ${asset('/assets/hero-1280.webp')} 1280w, ${asset('/assets/hero-1920.webp')} 1920w`}
+          sizes="100vw"
+          width="1280"
+          height="853"
+          fetchpriority="high"
+          decoding="async"
+          alt="Nasmejana devojčica u stolici stomatološke ordinacije Pepermint, stomatolog u pozadini"
+        />
+      </picture>
       <div className="hero-scrim" aria-hidden="true" />
 
       <div className="hero-inner" style={{ position: 'relative', maxWidth: 1100, margin: '0 auto', padding: '200px 24px 88px', width: '100%' }}>

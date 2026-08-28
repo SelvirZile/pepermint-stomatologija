@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SERVICES } from './data/site.js';
-import { useScrollSpy, useScrollReveal } from './hooks.js';
+import { useScrollSpy, useScrollReveal, useHashSync } from './hooks.js';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Services from './components/Services.jsx';
@@ -16,6 +16,7 @@ const SECTION_IDS = ['usluge', 'cenovnik', 'tim', 'kako'];
 export default function App() {
   const { scrolled, active } = useScrollSpy(SECTION_IDS);
   useScrollReveal();
+  useHashSync(active);
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [serviceIdx, setServiceIdx] = useState(null);
