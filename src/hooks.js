@@ -86,6 +86,7 @@ export function useHashSync(active) {
     const want = active ? '#' + active : '';
     const have = window.location.hash;
     if (have === want) return;
+    if (want === '' && have === '#top') return;
 
     const url = window.location.pathname + window.location.search + want;
     // replaceState: no history entries, no jump, back button still works normally

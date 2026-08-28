@@ -4,6 +4,12 @@ import Icon from './Icon.jsx';
 
 const GOLD = '#e8cf9a';
 
+const goTop = (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  try { window.history.replaceState(null, '', window.location.pathname + window.location.search); } catch (err) {}
+};
+
 export default function Navbar({ scrolled, active, menuOpen, onToggleMenu, onCloseMenu, onOpenContact }) {
   const headerStyle = {
     position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
@@ -36,7 +42,7 @@ export default function Navbar({ scrolled, active, menuOpen, onToggleMenu, onClo
   return (
     <header style={headerStyle}>
       <div className={`nav-bar ${scrolled ? 'nav-bar-scrolled' : 'nav-bar-static'}`} style={barStyle}>
-        <a href="#top" aria-label="Pepermint, početak stranice" style={{ display: 'flex', alignItems: 'center' }}>
+        <a href="#top" onClick={goTop} aria-label="Pepermint, početak stranice" style={{ display: 'flex', alignItems: 'center' }}>
           {logo(54)}
         </a>
 

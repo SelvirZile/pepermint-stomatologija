@@ -1,6 +1,12 @@
 import { CONTACT } from '../data/site.js';
 import { asset } from '../asset.js';
 
+const goTop = (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  try { window.history.replaceState(null, '', window.location.pathname + window.location.search); } catch (err) {}
+};
+
 export default function Footer() {
   return (
     <footer style={{ position: 'relative', overflow: 'hidden', background: '#30383A' }}>
@@ -13,7 +19,7 @@ export default function Footer() {
       </svg>
 
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '100%', margin: '0 auto', padding: '22px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
-        <a href="#top" aria-label="Pepermint, natrag na početak" style={{ display: 'block' }}>
+        <a href="#top" onClick={goTop} aria-label="Pepermint, natrag na početak" style={{ display: 'block' }}>
           <picture>
             <source srcSet={asset('/assets/logo-light.webp')} type="image/webp" />
             <img src={asset('/assets/logo-light.png')} alt="Pepermint stomatološka ordinacija" width="117" height="54" loading="lazy" decoding="async" style={{ display: 'block', height: 54, width: 'auto' }} />
