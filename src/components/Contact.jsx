@@ -7,7 +7,7 @@ const PIN = '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path
 export default function Contact() {
   return (
     <section id="kako" aria-labelledby="kako-title">
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(40px,5vw,64px) 24px clamp(64px,10vw,112px)' }}>
+      <div data-reveal style={{ maxWidth: 1100, margin: '0 auto', padding: 'clamp(40px,5vw,64px) 24px clamp(64px,10vw,112px)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 'clamp(32px,5vw,56px)', alignItems: 'start' }}>
           <div>
             <p style={{ fontFamily: "'Manrope',sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD_DARK, margin: '0 0 16px' }}>

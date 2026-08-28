@@ -17,7 +17,7 @@ export default function Team() {
         style={{ position: 'absolute', top: 40, left: '50%', transform: 'translateX(-50%)', height: 360, width: 'auto', opacity: 0.14, pointerEvents: 'none', zIndex: 0 }}
       />
 
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: 'clamp(64px,10vw,112px) 24px clamp(40px,5vw,56px)' }}>
+      <div data-reveal style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: 'clamp(64px,10vw,112px) 24px clamp(40px,5vw,56px)' }}>
         <p style={{ fontFamily: "'Manrope',sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD_DARK, margin: '0 0 16px', textAlign: 'center' }}>
           Naš tim
         </p>

@@ -50,3 +50,32 @@ export function useSwipe(onLeft, onRight, threshold = 40) {
     }
   };
 }
+
+/** Reveals [data-reveal] blocks as they scroll into view. SSR-safe, one observer for the page. */
+export function useScrollReveal() {
+  useEffect(() => {
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!nodes.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      nodes.forEach((n) => n.classList.add('reveal', 'is-visible'));
+      return;
+    }
+
+    nodes.forEach((n) => n.classList.add('reveal'));
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.08 }
+    );
+
+    nodes.forEach((n) => io.observe(n));
+    return () => io.disconnect();
+  }, []);
+}

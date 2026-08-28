@@ -38,7 +38,7 @@ export default function Services({ onOpenService }) {
         style={{ position: 'absolute', top: 40, left: '50%', transform: 'translateX(-50%)', height: 360, width: 'auto', opacity: 0.14, pointerEvents: 'none', zIndex: 0 }}
       />
 
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: 'clamp(64px,10vw,112px) 24px' }}>
+      <div data-reveal style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: 'clamp(64px,10vw,112px) 24px' }}>
         <p style={{ fontFamily: "'Manrope',sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD_DARK, margin: '0 0 16px', textAlign: 'center' }}>
           Usluge
         </p>
@@ -52,7 +52,7 @@ export default function Services({ onOpenService }) {
           Sve što je potrebno da tvoji zubi budu zdravi, funkcionalni i lepi.
         </p>
 
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(2px,0.5vw,8px)' }}>
+        <div className="svc-3d-wrap" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'clamp(2px,0.5vw,8px)' }}>
           <button type="button" onClick={prev} className="carousel-arrow" aria-label="Prethodna usluga" style={arrowStyle}>
             <Icon path='<path d="M15 6l-6 6 6 6"></path>' size={18} strokeWidth={1.9} />
           </button>
@@ -147,7 +147,24 @@ export default function Services({ onOpenService }) {
           </button>
         </div>
 
-        <div role="tablist" aria-label="Izbor usluge" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 36 }}>
+
+        <ul className="svc-strip">
+          {SERVICES.map((s, idx) => (
+            <li key={s.title} className="svc-strip-card">
+              <span className="svc-strip-icon">
+                <Icon path={s.icon} size={30} />
+              </span>
+              <h3 style={{ fontFamily: "'Newsreader',Georgia,serif", fontWeight: 400, fontSize: 26, margin: '0 0 12px', color: '#FAF9F5' }}>{s.title}</h3>
+              <p style={{ color: '#d5e8e3', margin: '0 0 22px', fontSize: 17, lineHeight: 1.55 }}>{s.desc}</p>
+              <button type="button" onClick={() => onOpenService(idx)} className="svc-strip-btn">
+                <span style={{ lineHeight: 1 }}>Saznaj više</span>
+                <Icon path='<path d="M5 12h14M13 6l6 6-6 6"></path>' size={15} strokeWidth={1.9} style={{ display: 'block', position: 'relative', top: 1 }} />
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <div role="tablist" className="svc-dots" aria-label="Izbor usluge" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginTop: 36 }}>
           {SERVICES.map((s, idx) => (
             <button
               key={s.title}

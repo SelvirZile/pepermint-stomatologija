@@ -79,6 +79,30 @@ a:hover { color: var(--green); }
 .rev-track { animation-duration: 64s; align-items: stretch; }
 .rev-track > figure { align-self: stretch; }
 
+/* --- services: mobile snap strip --- */
+.svc-strip { display: none; }
+.svc-strip-card {
+  flex: 0 0 78%; scroll-snap-align: center; scroll-snap-stop: always;
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 330px; padding: 34px 30px; border-radius: 18px; box-sizing: border-box;
+  background: radial-gradient(120% 70% at 30% 0%, #17756a, #0f5e54 45%, #0a4139);
+  border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 18px 44px rgba(12,60,52,0.28);
+}
+.svc-strip-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px;
+  background: rgba(220,238,233,0.2); border: 1.5px solid #A7CEC4; border-radius: 14px;
+  color: #bcdcd4; margin-bottom: 20px;
+}
+.svc-strip-btn {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px; color: #e8cf9a;
+  background: rgba(10,65,57,0.55); border: 1px solid rgba(232,207,154,0.6); border-radius: 999px; padding: 10px 18px;
+}
+
+/* --- scroll reveal --- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.33,.7,.3,1); will-change: opacity, transform; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
 /* --- team hover --- */
 .tim-card img { transition: transform .6s cubic-bezier(.33,.7,.3,1); }
 .tim-card:hover img { transform: scale(1.07); }
@@ -120,6 +144,16 @@ a:hover { color: var(--green); }
   .hero-inner .hero-btns { justify-content: center !important; }
   .hero-inner .hero-btns a { padding: 13px 22px !important; font-size: 15px !important; border-radius: 999px !important; }
 
+  .svc-3d-wrap { display: none !important; }
+  .svc-dots { display: none !important; }
+  .svc-strip {
+    display: flex !important; list-style: none; margin: 0 -24px; padding: 4px 24px 8px; gap: 16px;
+    overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .svc-strip::-webkit-scrollbar { display: none; }
   .carousel-arrow { display: none !important; }
   .carousel-side { display: none !important; }
   .rev-track > figure { flex: 0 0 280px !important; }
@@ -144,4 +178,5 @@ a:hover { color: var(--green); }
     transition-duration: .001ms !important;
   }
   .marquee-track { animation: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
 }

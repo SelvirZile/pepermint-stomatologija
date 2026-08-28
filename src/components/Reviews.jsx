@@ -20,7 +20,7 @@ export default function Reviews() {
         </g>
       </svg>
 
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: 'clamp(40px,5vw,64px) 24px clamp(40px,5vw,56px)' }}>
+      <div data-reveal style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: 'clamp(40px,5vw,64px) 24px clamp(40px,5vw,56px)' }}>
         <p style={{ fontFamily: "'Manrope',sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD, margin: '0 0 16px' }}>
           Iskustva
         </p>

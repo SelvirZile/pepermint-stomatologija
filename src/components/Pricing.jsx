@@ -17,7 +17,7 @@ export default function Pricing() {
         </g>
       </svg>
 
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1000, margin: '0 auto', padding: 'clamp(64px,10vw,112px) 24px' }}>
+      <div data-reveal style={{ position: 'relative', zIndex: 1, maxWidth: 1000, margin: '0 auto', padding: 'clamp(64px,10vw,112px) 24px' }}>
         <p style={{ fontFamily: "'Manrope',sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD, margin: '0 0 16px', textAlign: 'center' }}>
           Cenovnik
         </p>
