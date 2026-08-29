@@ -22,6 +22,7 @@ button:focus:not(:focus-visible), a:focus:not(:focus-visible) { outline: none; }
 html { scroll-behavior: smooth; }
 body { margin: 0; }
 img { max-width: 100%; }
+.nav-logo { aspect-ratio: 117 / 54; }
 a { color: var(--ink); text-decoration: none; }
 a:hover { color: var(--green); }
 ::selection { background: #d7dbde; }
