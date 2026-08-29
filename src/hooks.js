@@ -6,20 +6,41 @@ export function useScrollSpy(ids, offset = 120) {
   const [active, setActive] = useState('');
 
   useEffect(() => {
-    const onScroll = () => {
+    // Layout is read once (and on resize), never inside the scroll handler.
+    let tops = [];
+    const measure = () => {
+      tops = ids
+        .map((id) => { const el = document.getElementById(id); return el ? { id, top: el.offsetTop } : null; })
+        .filter(Boolean);
+    };
+
+    let queued = false;
+    const apply = () => {
+      queued = false;
       const y = window.scrollY;
       setScrolled(y > 8);
       const mark = y + offset;
       let found = '';
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop <= mark) found = id;
-      }
+      for (const t of tops) if (t.top <= mark) found = t.id;
       setActive(found);
     };
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(apply);
+    };
+    const onResize = () => { measure(); onScroll(); };
+
+    measure();
+    apply();
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onResize);
+    window.addEventListener('load', onResize);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('load', onResize);
+    };
   }, [ids, offset]);
 
   return { scrolled, active };
