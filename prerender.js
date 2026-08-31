@@ -26,17 +26,14 @@ if (cssLink) {
 html = html.replace(
   /<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com[^"]+)"[^>]*>/,
   (_m, href) =>
-    `<script>addEventListener('load',function(){var l=document.createElement('link');l.rel='stylesheet';l.href=${JSON.stringify(href)};document.head.appendChild(l)})</script>`
+    `<script>(function(){var f=function(){var l=document.createElement('link');l.rel='stylesheet';l.href=${JSON.stringify(href)};document.head.appendChild(l)};` +
+    `if(document.readyState==='complete')f();else addEventListener('load',f)})()</script>`
 );
 html = html.replace(/<link rel="preload" as="style" href="https:\/\/fonts\.googleapis\.com[^"]+>/, '');
 
-/* 3. Hydration can wait until the browser is idle - nothing above the fold needs JS. */
-html = html.replace(
-  /<script type="module" (crossorigin )?src="([^"]+)"><\/script>/,
-  (_m, _c, src) =>
-    `<script>(function(){var s=document.createElement('script');s.type='module';s.src=${JSON.stringify(src)};` +
-    `('requestIdleCallback' in window?requestIdleCallback:setTimeout)(function(){document.head.appendChild(s)},1)})();</script>`
-);
+/* 3. Hydration: the module script stays a real <script type="module"> tag.
+   Modules are deferred by default, so it never blocks first paint. Do NOT swap it
+   for a JS-injected script - that loses `crossorigin` and hydration silently dies. */
 
 await fs.writeFile(path.join(dist, 'index.html'), html);
 await fs.writeFile(path.join(dist, '404.html'), html);
